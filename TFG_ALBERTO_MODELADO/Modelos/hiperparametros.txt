@@ -1,0 +1,6 @@
+hiper_tree_mag:{'max_depth': 2, 'min_samples_split': 17, 'min_samples_leaf': 2}
+hiper_forest_mag:{'n_estimators': 72, 'max_depth': 2, 'min_samples_split': 4, 'min_samples_leaf': 3, 'bootstrap': True}
+hiper_tree_num:{'max_depth': 7, 'min_samples_split': 13, 'min_samples_leaf': 10}
+hiper_forest_num:{'n_estimators': 62, 'max_depth': 7, 'min_samples_split': 3, 'min_samples_leaf': 5, 'bootstrap': True}
+hiper_XGBRegressor_mag:{'n_estimators': 59, 'learning_rate': 0.037489601628432116, 'max_depth': 1, 'subsample': 0.9909073340830932, 'colsample_bytree': 0.8233624079646163, 'min_child_weight': 8, 'gamma': 0.1725504173815879}
+hiper_XGBRegressor_num:{'n_estimators': 87, 'learning_rate': 0.026220785102029916, 'max_depth': 4, 'subsample': 0.7000173241822817, 'colsample_bytree': 0.7335189835419963, 'min_child_weight': 9, 'gamma': 0.17613930471218953}

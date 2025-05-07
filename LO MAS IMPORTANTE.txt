@@ -1,0 +1,16 @@
+
+vista_magnitud_media_acumulativa
+vista_terremotos_acumulativos
+	terremotos_por_cluster_dia_def
+		terremotos_con_clusters_def
+			earthquakes
+
+terremotos_con_clusters_def_text
+	terremotos_con_clusters_def
+		earthquakes
+
+SELECT pg_catalog.pg_get_viewdef(c.oid, true) AS create_statement
+FROM pg_catalog.pg_class c
+WHERE c.relkind = 'm' -- 'm' indica vistas materializadas
+AND c.relname = 'VISTA MATERIALIZADA';
+
