@@ -1,0 +1,34 @@
+# TFG - Despliegue del Proyecto
+
+Desde Visual Studio Code o la terminal, abra y ejecute el archivo
+automatizacion.py que se encuentra en el directorio raíz del proyecto. Este archivo automatiza el flujo completo del sistema:
+
+1. Generación y carga del archivo .env. El script primero verifica si el archivo
+.env existe. Si no es así, solicita que ingrese los parámetros de
+configuración necesarios (usuario de base de datos, contrasña, puerto, etc.) y
+genera el archivo automáticamente.
+
+2. Exportación de datos desde PostgreSQL. El script exporta las vistas relevantes
+desde la base de datos PostgreSQL a archivos CSV para ser utilizados en el
+proceso de modelado predictivo.
+
+3. Ejecución de modelos predictivos en Python. Se ejecuta el modelo de
+predicción el cual realiza el análisis y la predicción de los datos sísmicos.
+
+4. Carga de predicciones en vistas materializadas. Una vez que el modelo ha
+generado las predicciones, los resultados se cargan en vistas materializadas
+dentro de la base de datos PostgreSQL.
+
+5. Exportación de resultados. El script exporta los resultados de las predicciones
+a CSVs, que luego se usan en las siguientes fases del sistema.
+
+6. Compilación del frontend. El script ejecuta npm run build para construir el
+frontend.
+
+7. Opción de iniciar el servidor backend en local. Después de completar el
+flujo, el script ofrece la opción de iniciar el servidor backend en el puerto
+especificado por el usuario para probar la aplicación de manera local.
+
+8. Acceso a la aplicación web en local. Si al finalizar decide lanzar el servidor local 
+en el puerto especificado por el usuario. Podrá acceder a la interfaz web desde su 
+navegador en: http://localhost:puerto

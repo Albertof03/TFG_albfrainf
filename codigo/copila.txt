@@ -1,0 +1,72 @@
+# TFG - Configuración del Entorno de Desarrollo
+
+PostgreSQL 17.0: Sistema de gestión de bases de datos utilizado para 
+almacenar toda la información y ejecutar consultas espaciales y de clustering.
+Puede descargarse desde la página oficial de PostgreSQL. Durante la
+instalación, asegúrese de recordar el nombre de usuario, la contraseña y el
+puerto asignado https://www.postgresql.org/ .
+
+Python 3.12: Lenguaje de programación utilizado en la parte de modelado
+predictivo. La versión 3.12 es compatible con todas las dependencias del
+proyecto. Se puede descargar desde la página oficial de Python https://www.python.org/ .
+
+Java 20.0.2: Necesario para ejecutar ciertas partes del sistema. Puede
+descargarse desde la página oficial de Oracle. Asegúrese de que la variable de
+entorno JAVA HOME esté correctamente configurada y apunte a la carpeta de
+instalación de Java https://www.oracle.com/java/technologies/javase-jdk20-downloads.html .
+
+Pip 25.0.1: Gestor de paquetes de Python necesario para instalar las bibliotecas
+del proyecto. En general se incluye automáticamente con Python, pero puede
+actualizarse con:
+python -m pip install --upgrade pip
+
+Visual Studio Code (VS Code) 1.99.3: Entorno de desarrollo recomendado
+para editar y ejecutar los scripts del proyecto. Disponible en la página oficial
+de Visual Studio Code https://code.visualstudio.com/ .
+
+Node.js 20.11.0 y npm 10.9.0: Requisitos para ejecutar el backend y frontend
+del sistema. Puede instalarse desde página oficial de Node.js https://nodejs.org/es .
+
+# Dependencias y Configuración
+
+1. Clonar el repositorio
+
+Abra una terminal y clone el repositorio oficial del proyecto:
+git clone https://github.com/Albertof03/albfrainf_TFG.git
+
+2. Instalación de dependencias Python
+Acceda al directorio del proyecto y ejecute:
+pip install -r requirements.txt
+
+Esto instalará todas las bibliotecas necesarias para el modelado y
+automatización de procesos.
+
+3. Instalación de dependencias JavaScript
+El proyecto cuenta con tres entornos independientes que requieren instalar
+dependencias mediante npm. Desde el directorio raíz del repositorio, ejecute
+los siguientes comandos:
+npm install --prefix TFG_ALBERTO_DATOS
+npm install --prefix TFG_ALBERTO_WEB/backend
+npm install --prefix TFG_ALBERTO_WEB/frontend/TFG
+
+Estos comandos instalarán automáticamente todas las dependencias definidas
+en los respectivos archivos package.json de los backend y frontend.
+
+4. Creación y configuración de la base de datos
+
+1. Cree una nueva base de datos PostgreSQL desde terminal:
+createdb -U tu usuario nueva base
+
+O bien desde la interfaz gráfica de PgAdmin, seleccionando Create >Database.
+
+2. Habilite la extensión espacial PostGIS para PostgreSQL necesaria para trabajar
+con datos geográficos:
+psql -U tu usuario -d nueva base -c "CREATE EXTENSION postgis";
+
+3. Restaure el contenido desde el archivo basedatos.dump incluido en el
+repositorio:
+
+pg restore -U tu usuario -d nueva base basedatos.dump
+
+Asegúrese de que el archivo esté en el mismo directorio desde donde ejecuta
+el comando, o especifique la ruta completa.
