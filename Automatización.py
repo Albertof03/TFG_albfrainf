@@ -68,23 +68,6 @@ def ejecutar_script(cmd, ruta):
         print(f"[✓] Script ejecutado ({ruta}):\n{resultado.stdout}")
     except subprocess.CalledProcessError as e:
         print(f"[X] Error ejecutando {ruta}:\n{e.stderr}")
-
-# def ejecutar_script(cmd, ruta):
-#     print(f"[→] Ejecutando script: {ruta}")
-#     try:
-#         proceso = subprocess.Popen(cmd + [ruta], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-
-#         for linea in proceso.stdout:
-#             print(linea, end='')  # Evita doble salto de línea
-
-#         proceso.wait()
-
-#         if proceso.returncode == 0:
-#             print(f"[✓] Script finalizado correctamente: {ruta}")
-#         else:
-#             print(f"[X] Script terminó con error (código {proceso.returncode}): {ruta}")
-#     except Exception as e:
-#         print(f"[X] Error ejecutando {ruta}:\n{e}")
         
 def refrescar_vistas(vistas):
     try:
@@ -207,7 +190,7 @@ def preguntar_e_iniciar_backend():
 # --- FLUJO COMPLETO ---
 
 ejecutar_script(["node"], SCRIPT_NODE)
-#refrescar_vistas(VISTAS_A_REFRESCAR)
+refrescar_vistas(VISTAS_A_REFRESCAR)
 
 exportar_vista_a_csv("public.vista_magnitud_media_acumulativa", f"{RUTA_SALIDA_CSVS}/magnitudmed.csv")
 exportar_vista_a_csv("public.vista_terremotos_acumulativos", f"{RUTA_SALIDA_CSVS}/terremotosacum.csv")
